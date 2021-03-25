@@ -13,7 +13,3 @@ if (!fs.existsSync(process.argv[2])) {
 
 const txt = fs.readFileSync(process.argv[2], 'utf-8').trim("").split("\n")
 console.log(txt.slice(txt.length - 10, txt.length).join("\n"))
-
-
-
-// node tail.js file.txt
