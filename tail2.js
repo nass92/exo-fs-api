@@ -16,9 +16,7 @@ let n = "-n"
 let x = Number(process.argv[4])
 if (n = process.argv[3]) {
   console.log(txt.slice(txt.length - x, txt.length).join("\n"))
-} /*else if (process.argv[3] !== n) {
-  console.log("your argument is not correct")
-}*/
+}
 else {
   console.log(txt.slice(txt.length - 10, txt.length).join("\n"))
 }
