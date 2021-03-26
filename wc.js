@@ -11,6 +11,8 @@ if (!fs.existsSync(process.argv[2])) {
   process.exit(1)
 }
 
-const txt = fs.readFileSync(process.argv[2], 'utf-8').trim("").split("\n")
-
-console.log(txt.slice(txt.length - 10, txt.length).join("\n"))
+const txt = fs.readFileSync(process.argv[2], 'utf-8')
+let line = txt.split("\n").length
+let word = txt.split(" ").length
+let car = txt.split("").length
+console.log(`${line} ${word} ${car} ${process.argv[2]} `)

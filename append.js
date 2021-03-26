@@ -12,8 +12,10 @@ if (!fs.existsSync(process.argv[2])) {
   process.exit(1)
 }
 // copier les fichier 
+// 1er méthode : {copyFileSync}
+
 if (process.argv.length >= 3) {
-  for (let i = 2; i < process.argv.length; i++) {
+  for (let i = 2; i < process.argv.length - 1; i++) {
     let y = process.argv.length - 1
     let cp = fs.copyFileSync(process.argv[i], process.argv[y])
   }
@@ -23,3 +25,9 @@ if (process.argv.length >= 3) {
 // mais je pense qu'il est aussi possible d'utiliser cette méthode.
 // je cherche encore comment faire...
 
+//2eme Methode : {readFileSync, writeFileSync}
+let txt = " "
+for (let i = 2; i < process.argv.length; i++) {
+  txt += fs.readFileSync(process.argv[i])
+}
+fs.writeFileSync(process.argv[process.argv.length - 1], txt)
